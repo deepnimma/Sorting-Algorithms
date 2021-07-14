@@ -3,6 +3,7 @@ import importlib
 from arrays import *
 import colorama
 from colorama import Fore
+import time
 
 TEN_UNSORTED = [TEN_ONE_UNSORTED, TEN_TWO_UNSORTED, TEN_THREE_UNSORTED, TEN_FOUR_UNSORTED, TEN_FOUR_UNSORTED]
 HUNDRED_UNSORTED = [HUNDRED_ONE_UNSORTED, HUNDRED_TWO_UNSORTED, HUNDRED_THREE_UNSORTED, HUNDRED_FOUR_UNSORTED, HUNDRED_FIVE_UNSORTED, HUNDRED_SIX_UNSORTED, HUNDRED_SEVEN_UNSORTED, HUNDRED_EIGHT_UNSORTED, HUNDRED_NINE_UNSORTED, HUNDRED_TEN_UNSORTED]
@@ -129,4 +130,6 @@ if __name__ == '__main__':
             print(f'Tested 100 Alphabet Arrays with Duplicates for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
             print(Fore.WHITE, end='\r')
 
-        print('\n\n')
+        print('\n')
+
+        time.sleep(1)

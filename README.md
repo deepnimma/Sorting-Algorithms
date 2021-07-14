@@ -4,9 +4,9 @@
 
 ## Completed Algorithms
 * BubbleSort
+* SelectionSort
 
 ## Planned Algorithms
-* SelectionSort
 * Recursive BubbleSort
 * InsertionSort
 * Recursive InsertionSort
