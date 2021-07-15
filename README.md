@@ -5,17 +5,14 @@
 ## Completed Algorithms
 * BubbleSort
 * SelectionSort
-
-## Planned Algorithms
-* Recursive BubbleSort
 * InsertionSort
-* Recursive InsertionSort
 * MergeSort
 * Iterative MergeSort
 * QuickSort
-* Iterative QuickSort
 * HeapSort
 * CountingSort
+
+## Planned Algorithms
 * RadixSort
 * BucketSort
 * ShellSort

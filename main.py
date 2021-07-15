@@ -4,16 +4,37 @@ from arrays import *
 import colorama
 from colorama import Fore
 import time
+# from time import get_clock_info
 
-TEN_UNSORTED = [TEN_ONE_UNSORTED, TEN_TWO_UNSORTED, TEN_THREE_UNSORTED, TEN_FOUR_UNSORTED, TEN_FOUR_UNSORTED]
-HUNDRED_UNSORTED = [HUNDRED_ONE_UNSORTED, HUNDRED_TWO_UNSORTED, HUNDRED_THREE_UNSORTED, HUNDRED_FOUR_UNSORTED, HUNDRED_FIVE_UNSORTED, HUNDRED_SIX_UNSORTED, HUNDRED_SEVEN_UNSORTED, HUNDRED_EIGHT_UNSORTED, HUNDRED_NINE_UNSORTED, HUNDRED_TEN_UNSORTED]
-THOUSAND_UNSORTED = [THOUSAND_ONE_UNSORTED, THOUSAND_TWO_UNSORTED, THOUSAND_THREE_UNSORTED, THOUSAND_FOUR_UNSORTED, THOUSAND_FIVE_UNSORTED, THOUSAND_SIX_UNSORTED, THOUSAND_SEVEN_UNSORTED]
-TWO_THOUSAND_FIVE_HUNDRED_UNSORTED = [TWO_THOUSAND_FIVE_HUNDRED_ONE_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_TWO_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_THREE_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_FOUR_UNSORTED]
+TEN_UNSORTED = [TEN_ONE_UNSORTED, TEN_TWO_UNSORTED, TEN_THREE_UNSORTED, TEN_FOUR_UNSORTED, TEN_FOUR_UNSORTED, TEN_FIVE_UNSORTED]
+HUNDRED_UNSORTED = [HUNDRED_ONE_UNSORTED, HUNDRED_TWO_UNSORTED, HUNDRED_THREE_UNSORTED, HUNDRED_FOUR_UNSORTED, HUNDRED_FIVE_UNSORTED, HUNDRED_SIX_UNSORTED, HUNDRED_SEVEN_UNSORTED, HUNDRED_EIGHT_UNSORTED, HUNDRED_NINE_UNSORTED, HUNDRED_TEN_UNSORTED, HUNDRED_ELEVEN_UNSORTED]
+THOUSAND_UNSORTED = [THOUSAND_ONE_UNSORTED, THOUSAND_TWO_UNSORTED, THOUSAND_THREE_UNSORTED, THOUSAND_FOUR_UNSORTED, THOUSAND_FIVE_UNSORTED, THOUSAND_SIX_UNSORTED, THOUSAND_SEVEN_UNSORTED, THOUSAND_EIGHT_UNSORTED]
+TWO_THOUSAND_FIVE_HUNDRED_UNSORTED = [TWO_THOUSAND_FIVE_HUNDRED_ONE_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_TWO_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_THREE_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_FOUR_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_FIVE_UNSORTED]
 ALPHABETS_UNSORTED = [ALPHABETS_ONE_UNSORTED, ALPHABETS_TWO_UNSORTED, ALPHABETS_THREE_UNSORTED, ALPHABETS_FOUR_UNSORTED]
 
+def sorttimes(times, filenames):
+    modtimes = times
+    modfilenames = filenames
+
+    for i in range(len(times)):
+        for j in range(len(times) - i - 1):
+            if times[j] > times[j + 1]:
+                times[j], times[j + 1] = times[j + 1], times[j]
+                filenames[j], filenames[j + 1] = filenames[j + 1], filenames[j]
+
+    return times, filenames
+
 if __name__ == '__main__':
+    times = []
+    filenames = []
+
     for file in os.listdir('./algorithms'):
+        start_time = time.time()
+        
         if file == '__pycache__':
+            continue
+
+        if file[-3:] != '.py':
             continue
 
         print(Fore.CYAN + f'Testing ' + Fore.LIGHTMAGENTA_EX + f'{file[:-3]}' + Fore.WHITE)
@@ -77,6 +98,10 @@ if __name__ == '__main__':
 
         skip_print = False
 
+        if file[:-3] == 'QuickSort':
+            continue
+
+
         print(f'Testing 10000 Length Arrays for {file[:-3]}...', end='\r')
         
         for unsorted_array in THOUSAND_UNSORTED:
@@ -130,6 +155,18 @@ if __name__ == '__main__':
             print(f'Tested 100 Alphabet Arrays with Duplicates for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
             print(Fore.WHITE, end='\r')
 
+        end_time = time.time()
+
+        times.append(round((end_time - start_time), 5))
+        filenames.append(file[:-3])
+
         print('\n')
 
         time.sleep(1)
+
+    times, filenames = sorttimes(times, filenames)
+
+    print(times, filenames)
+
+    for i in range(len(filenames)):
+        print('{}. {} - {}s'.format(i + 1, filenames[i], times[i]))
