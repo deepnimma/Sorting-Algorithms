@@ -11,10 +11,9 @@
 * QuickSort
 * HeapSort
 * CountingSort
+* RadixSort
 
 ## Planned Algorithms
-* RadixSort
-* BucketSort
 * ShellSort
 * TimSort
 * CombSort
