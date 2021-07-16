@@ -99,6 +99,7 @@ if __name__ == '__main__':
         skip_print = False
 
         if file[:-3] == 'QuickSort':
+            print('\n')
             continue
 
 
