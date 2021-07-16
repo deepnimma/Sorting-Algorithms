@@ -37,6 +37,10 @@ if __name__ == '__main__':
         if file[-3:] != '.py':
             continue
 
+        # Just a Skip to Make Testing Faster
+        # if file[:-3] != 'ShellSort':
+        #     continue
+
         print(Fore.CYAN + f'Testing ' + Fore.LIGHTMAGENTA_EX + f'{file[:-3]}' + Fore.WHITE)
 
         importPath = 'algorithms.' + file[:-3]
@@ -47,7 +51,8 @@ if __name__ == '__main__':
         skip_print = False
 
         for unsorted_array in TEN_UNSORTED:
-            if(sortAlgo.sort(unsorted_array) != TEN_SORTED):
+            copied_array = unsorted_array
+            if(sortAlgo.sort(copied_array) != TEN_SORTED):
                 print(f'Tested 10 Length Arrays for {file[:-3]}... ' + Fore.RED + 'Failed')
                 print(Fore.WHITE)
 
@@ -59,9 +64,13 @@ if __name__ == '__main__':
 
         print(f'Testing 10 Length Arrays With Duplicates for {file[:-3]}...', end='\r')
 
-        first_ten_flag = (sortAlgo.sort(TEN_ONE_UNSORTED_DUPLICATES) == TEN_ONE_SORTED_DUPLICATES)
-        second_ten_flag = (sortAlgo.sort(TEN_TWO_UNSORTED_DUPLICATES) == TEN_TWO_SORTED_DUPLICATES)
-        third_ten_flag = (sortAlgo.sort(TEN_THREE_UNSORTED_DUPLICATES) == TEN_THREE_SORTED_DUPLICATES)
+        TEN_ONE_UNSORTED_DUPLICATES_COPY = TEN_ONE_UNSORTED_DUPLICATES
+        TEN_TWO_UNSORTED_DUPLICATES_COPY = TEN_TWO_UNSORTED_DUPLICATES
+        TEN_THREE_UNSORTED_DUPLICATES_COPY = TEN_THREE_UNSORTED_DUPLICATES
+
+        first_ten_flag = (sortAlgo.sort(TEN_ONE_UNSORTED_DUPLICATES_COPY) == TEN_ONE_SORTED_DUPLICATES)
+        second_ten_flag = (sortAlgo.sort(TEN_TWO_UNSORTED_DUPLICATES_COPY) == TEN_TWO_SORTED_DUPLICATES)
+        third_ten_flag = (sortAlgo.sort(TEN_THREE_UNSORTED_DUPLICATES_COPY) == TEN_THREE_SORTED_DUPLICATES)
 
         if(not first_ten_flag or not second_ten_flag or not third_ten_flag):
             print(f'Tested 10 Length Arrays with Duplicates for {file[:-3]}... ' + Fore.RED + 'Failed')
@@ -75,7 +84,8 @@ if __name__ == '__main__':
         print(f'Testing 100 Length Arrays for {file[:-3]}...', end='\r')
         
         for unsorted_array in HUNDRED_UNSORTED:
-            if(sortAlgo.sort(unsorted_array) != HUNDRED_SORTED):
+            copied_array = unsorted_array
+            if(sortAlgo.sort(copied_array) != HUNDRED_SORTED):
                 print(f'Tested 100 Length Arrays for {file[:-3]}... ' + Fore.RED + 'Failed')
                 print(Fore.WHITE)
 
@@ -85,9 +95,13 @@ if __name__ == '__main__':
             print(f'Tested 100 Length Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
         print(Fore.WHITE, end='\r\r')
 
-        first_hundred_flag = (sortAlgo.sort(HUNDRED_ONE_UNSORTED_DUPLICATES) == HUNDRED_ONE_SORTED_DUPLICATES)
-        second_hundred_flag = (sortAlgo.sort(HUNDRED_TWO_UNSORTED_DUPLICATES) == HUNDRED_TWO_SORTED_DUPLICATES)
-        third_hundred_flag = (sortAlgo.sort(HUNDRED_THREE_UNSORTED_DUPLICATES) == HUNDRED_THREE_SORTED_DUPLICATES)
+        HUNDRED_ONE_UNSORTED_DUPLICATES_COPY = HUNDRED_ONE_UNSORTED_DUPLICATES
+        HUNDRED_TWO_UNSORTED_DUPLICATES_COPY = HUNDRED_TWO_UNSORTED_DUPLICATES
+        HUNDRED_THREE_UNSORTED_DUPLICATES_COPY = HUNDRED_THREE_UNSORTED_DUPLICATES
+
+        first_hundred_flag = (sortAlgo.sort(HUNDRED_ONE_UNSORTED_DUPLICATES_COPY) == HUNDRED_ONE_SORTED_DUPLICATES)
+        second_hundred_flag = (sortAlgo.sort(HUNDRED_TWO_UNSORTED_DUPLICATES_COPY) == HUNDRED_TWO_SORTED_DUPLICATES)
+        third_hundred_flag = (sortAlgo.sort(HUNDRED_THREE_UNSORTED_DUPLICATES_COPY) == HUNDRED_THREE_SORTED_DUPLICATES)
 
         if not first_hundred_flag or not second_hundred_flag or not third_hundred_flag:
             print(f'Tested 100 Length Arrays with Duplicates for {file[:-3]}... ' + Fore.RED + 'Failed')
@@ -103,10 +117,11 @@ if __name__ == '__main__':
             continue
 
 
-        print(f'Testing 10000 Length Arrays for {file[:-3]}...', end='\r')
+        print(f'Testing 1000 Length Arrays for {file[:-3]}...', end='\r')
         
         for unsorted_array in THOUSAND_UNSORTED:
-            if(sortAlgo.sort(unsorted_array) != THOUSAND_SORTED):
+            copied_array = unsorted_array
+            if(sortAlgo.sort(copied_array) != THOUSAND_SORTED):
                 print(f'Tested 1000 Length Arrays for {file[:-3]}... ' + Fore.RED + 'Failed')
                 print(Fore.WHITE, end='\r')
 
@@ -121,7 +136,8 @@ if __name__ == '__main__':
         print(f'Testing 2500 Length Arrays for {file[:-3]}...', end='\r')
         
         for unsorted_array in TWO_THOUSAND_FIVE_HUNDRED_UNSORTED:
-            if(sortAlgo.sort(unsorted_array) != TWO_THOUSAND_FIVE_HUNDRED_SORTED):
+            copied_array = unsorted_array
+            if(sortAlgo.sort(copied_array) != TWO_THOUSAND_FIVE_HUNDRED_SORTED):
                 print(f'Tested 2500 Length Arrays for {file[:-3]}... ' + Fore.RED + 'Failed')
                 print(Fore.WHITE)
 
