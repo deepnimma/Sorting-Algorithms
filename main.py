@@ -10,7 +10,7 @@ TEN_UNSORTED = [TEN_ONE_UNSORTED, TEN_TWO_UNSORTED, TEN_THREE_UNSORTED, TEN_FOUR
 HUNDRED_UNSORTED = [HUNDRED_ONE_UNSORTED, HUNDRED_TWO_UNSORTED, HUNDRED_THREE_UNSORTED, HUNDRED_FOUR_UNSORTED, HUNDRED_FIVE_UNSORTED, HUNDRED_SIX_UNSORTED, HUNDRED_SEVEN_UNSORTED, HUNDRED_EIGHT_UNSORTED, HUNDRED_NINE_UNSORTED, HUNDRED_TEN_UNSORTED, HUNDRED_ELEVEN_UNSORTED]
 THOUSAND_UNSORTED = [THOUSAND_ONE_UNSORTED, THOUSAND_TWO_UNSORTED, THOUSAND_THREE_UNSORTED, THOUSAND_FOUR_UNSORTED, THOUSAND_FIVE_UNSORTED, THOUSAND_SIX_UNSORTED, THOUSAND_SEVEN_UNSORTED, THOUSAND_EIGHT_UNSORTED]
 TWO_THOUSAND_FIVE_HUNDRED_UNSORTED = [TWO_THOUSAND_FIVE_HUNDRED_ONE_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_TWO_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_THREE_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_FOUR_UNSORTED, TWO_THOUSAND_FIVE_HUNDRED_FIVE_UNSORTED]
-ALPHABETS_UNSORTED = [ALPHABETS_ONE_UNSORTED, ALPHABETS_TWO_UNSORTED, ALPHABETS_THREE_UNSORTED, ALPHABETS_FOUR_UNSORTED]
+# ALPHABETS_UNSORTED = [ALPHABETS_ONE_UNSORTED, ALPHABETS_TWO_UNSORTED, ALPHABETS_THREE_UNSORTED, ALPHABETS_FOUR_UNSORTED]
 
 def sorttimes(times, filenames):
     modtimes = times
@@ -130,31 +130,6 @@ if __name__ == '__main__':
         if not skip_print:
             print(f'Tested 2500 Length Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
         print(Fore.WHITE, end='\r\r')
-
-        skip_print = False
-
-        print(f'Testing Alphabet Arrays for {file[:-3]}...', end='\r')
-        
-        for unsorted_array in ALPHABETS_UNSORTED:
-            if(sortAlgo.sort(unsorted_array) != ALPHABETS_SORTED):
-                print(f'Tested Alphabet Arrays for {file[:-3]}... ' + Fore.RED + 'Failed')
-                print(Fore.WHITE)
-
-                skip_print = True
-        
-        if not skip_print:
-            print(f'Tested Alphabet Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
-        print(Fore.WHITE, end='\r\r')
-
-        first_alphabet_flag = (sortAlgo.sort(ALPHABETS_ONE_UNSORTED_DUPLICATES) == ALPHABETS_ONE_SORTED_DUPLICATES)
-        second_alphabet_flag = (sortAlgo.sort(ALPHABETS_TWO_UNSORTED_DUPLICATES) == ALPHABETS_TWO_SORTED_DUPLICATES)
-
-        if not first_alphabet_flag or not second_alphabet_flag:
-            print(f'Tested Alphabet Arrays with Duplicates for {file[:-3]}... ' + Fore.RED + 'Failed')
-            print(Fore.WHITE, end='\r')
-        else:
-            print(f'Tested 100 Alphabet Arrays with Duplicates for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
-            print(Fore.WHITE, end='\r')
 
         end_time = time.time()
 
