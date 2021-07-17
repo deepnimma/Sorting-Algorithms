@@ -1,0 +1,11 @@
+17/July/2021 - 04:48:38 PM  
+Day: 198 Week: 28
+
+1. InsertionSort - 0.00699s
+2. CountingSort - 0.02091s
+3. IterativeMergeSort - 0.1044s
+4. MergeSort - 0.10772s
+5. HeapSort - 0.15619s
+6. SelectionSort - 1.19095s
+7. BubbleSort - 2.49744s
+8. RadixSort - 8.35104s

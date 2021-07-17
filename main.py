@@ -4,6 +4,7 @@ from arrays import *
 import colorama
 from colorama import Fore
 import time
+from datetime import datetime
 # from time import get_clock_info
 
 TEN_UNSORTED = [TEN_ONE_UNSORTED, TEN_TWO_UNSORTED, TEN_THREE_UNSORTED, TEN_FOUR_UNSORTED, TEN_FOUR_UNSORTED, TEN_FIVE_UNSORTED]
@@ -38,7 +39,7 @@ if __name__ == '__main__':
             continue
 
         # Just a Skip to Make Testing Faster
-        # if file[:-3] != 'ShellSort':
+        # if file[:-3] != 'TimSort':
         #     continue
 
         print(Fore.CYAN + f'Testing ' + Fore.LIGHTMAGENTA_EX + f'{file[:-3]}' + Fore.WHITE)
@@ -158,7 +159,22 @@ if __name__ == '__main__':
 
     times, filenames = sorttimes(times, filenames)
 
-    print(times, filenames)
+    # print(times, filenames)
+
+    results = ''
+
+    outputfile = open('results.txt', 'w')
+
+    currenttime = datetime.now()
+    currenttimeformatted = currenttime.strftime("%d/%B/%Y - %I:%M:%S %p  %z%Z")
+    currenttimeformattedline2 = currenttime.strftime("Day: %j Week: %U")
+
+        
+    print(currenttimeformatted, file=outputfile, end='\n')
+    print(currenttimeformattedline2, file=outputfile, end='\n\n')
+
+    print(f'{currenttimeformatted}\n{currenttimeformattedline2}\n')
 
     for i in range(len(filenames)):
         print('{}. {} - {}s'.format(i + 1, filenames[i], times[i]))
+        print('{}. {} - {}s'.format(i + 1, filenames[i], times[i]), file=outputfile, end='\n')
