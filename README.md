@@ -12,11 +12,11 @@
 * HeapSort
 * CountingSort
 * RadixSort
-
-## Planned Algorithms
 * ShellSort
 * TimSort
 * CombSort
+
+## Planned Algorithms
 * PigeonholeSort
 * CycleSort
 * CocktailSort
