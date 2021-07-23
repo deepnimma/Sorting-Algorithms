@@ -16,15 +16,15 @@
 * TimSort
 * CombSort
 * PigeonholeSort
-
-## Planned Algorithms
 * CycleSort
 * CocktailSort
 * StrandSort
-* BitonicSort
 * PancakeSort
 * BinaryInsertionSort
 * GnomeSort
+
+## Planned Algorithms
+* BitonicSort
 * StructureSort
 * SleepSort
 * StoogeSort
