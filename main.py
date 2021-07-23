@@ -39,7 +39,7 @@ if __name__ == '__main__':
             continue
 
         # Just a Skip to Make Testing Faster
-        # if file[:-3] != 'BinaryInsertionSort':
+        # if file[:-3] != 'GnomeSort':
         #     continue
 
         print(Fore.CYAN + f'Testing ' + Fore.LIGHTMAGENTA_EX + f'{file[:-3]}' + Fore.WHITE)
