@@ -51,6 +51,7 @@ if __name__ == '__main__':
         
         skip_print = False
 
+        i = 0
         for unsorted_array in TEN_UNSORTED:
             copied_array = unsorted_array
             if(sortAlgo.sort(copied_array) != TEN_SORTED):
@@ -58,6 +59,7 @@ if __name__ == '__main__':
                 print(Fore.WHITE)
 
                 skip_print = True
+                break
 
         if not skip_print:
             print(f'Tested 10 Length Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
@@ -91,6 +93,7 @@ if __name__ == '__main__':
                 print(Fore.WHITE)
 
                 skip_print = True
+                break
         
         if not skip_print:
             print(f'Tested 100 Length Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
@@ -127,6 +130,7 @@ if __name__ == '__main__':
                 print(Fore.WHITE, end='\r')
 
                 skip_print = True
+                break
         
         if not skip_print:
             print(f'Tested 1000 Length Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
@@ -143,6 +147,7 @@ if __name__ == '__main__':
                 print(Fore.WHITE)
 
                 skip_print = True
+                break
         
         if not skip_print:
             print(f'Tested 2500 Length Arrays for {file[:-3]}... ' + Fore.LIGHTGREEN_EX + 'Ok')
