@@ -15,9 +15,9 @@
 * ShellSort
 * TimSort
 * CombSort
+* PigeonholeSort
 
 ## Planned Algorithms
-* PigeonholeSort
 * CycleSort
 * CocktailSort
 * StrandSort
