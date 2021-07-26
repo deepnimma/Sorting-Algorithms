@@ -24,13 +24,23 @@
 * GnomeSort
 
 ## Planned Algorithms
-* BitonicSort
-* StructureSort
-* SleepSort
-* StoogeSort
-* TagSort
-* TreeSort
-* CartesianTree
 * Odd-EvenSort
-* 3-Way QuickSort
-* 3-Way MergeSort
+* Bead Sort
+* Bitonic Sort
+* BucketSort
+* Cocktail Shaker Sort
+* External Sort
+* Intro Sort
+* Merge Insertion Sort
+* MSD Radix Sort
+* Natural Sort
+* PancakeSort
+* Patience Sort
+* PigeonSort
+* 3 Way Quick Sort
+* Recursive Bubble Sort
+* Recursive Insertion Sort
+* Recursive MergeSort
+* Recursive QuickSort
+* WiggleSort
+* UnknownSort
