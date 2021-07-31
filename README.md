@@ -26,19 +26,13 @@
 * Bitonic Sort
 * BucketSort
 * Cocktail Shaker Sort
-
-## Planned Algorithms
 * Intro Sort
 * MSD Radix Sort
-* Merge Insertion Sort
-* Natural Sort
 * Odd-EvenSort
 * PancakeSort
-* Patience Sort
 * PigeonSort
 * Recursive Bubble Sort
-* Recursive Insertion Sort
-* Recursive MergeSort
-* Recursive QuickSort
+
+## Planned Algorithms
 * UnknownSort
 * WiggleSort

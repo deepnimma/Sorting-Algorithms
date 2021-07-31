@@ -29,6 +29,8 @@ if __name__ == '__main__':
     times = []
     filenames = []
 
+    total_time_first = time.time()
+
     for file in os.listdir('./algorithms'):
         start_time = time.time()
         
@@ -39,8 +41,12 @@ if __name__ == '__main__':
             continue
 
         # Just a Skip to Make Testing Faster
-        # if file[:-3] != 'CocktailShakerSort':
+        # if file[:-3] != 'WiggleSort':
         #     continue
+
+        # Skipping WiggleSort because it's not a sorting algorithm, just a cool 'shuffle'
+        if file[:-3] == 'WiggleSort':
+            continue
 
         TEN_UNSORTED = [TEN_ONE_UNSORTED, TEN_TWO_UNSORTED, TEN_THREE_UNSORTED, TEN_FOUR_UNSORTED, TEN_FOUR_UNSORTED, TEN_FIVE_UNSORTED]
         HUNDRED_UNSORTED = [HUNDRED_ONE_UNSORTED, HUNDRED_TWO_UNSORTED, HUNDRED_THREE_UNSORTED, HUNDRED_FOUR_UNSORTED, HUNDRED_FIVE_UNSORTED, HUNDRED_SIX_UNSORTED, HUNDRED_SEVEN_UNSORTED, HUNDRED_EIGHT_UNSORTED, HUNDRED_NINE_UNSORTED, HUNDRED_TEN_UNSORTED, HUNDRED_ELEVEN_UNSORTED]
@@ -122,7 +128,7 @@ if __name__ == '__main__':
 
         skip_print = False
 
-        if file[:-3] == 'QuickSort':
+        if file[:-3] == 'QuickSort' or file[:-3] == 'RecursiveBubbleSort':
             print('\n')
             continue
 
@@ -189,3 +195,5 @@ if __name__ == '__main__':
     for i in range(len(filenames)):
         print('{}. {} - {}s'.format(i + 1, filenames[i], times[i]))
         print('{}. {} - {}s'.format(i + 1, filenames[i], times[i]), file=outputfile, end='\n')
+
+    print('\nTotal Time: {}s'.format(round(time.time() - total_time_first), 5))
