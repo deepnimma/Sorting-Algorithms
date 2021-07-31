@@ -41,7 +41,7 @@ if __name__ == '__main__':
             continue
 
         # Just a Skip to Make Testing Faster
-        # if file[:-3] != 'WiggleSort':
+        # if file[:-3] != 'UnknownSort':
         #     continue
 
         # Skipping WiggleSort because it's not a sorting algorithm, just a cool 'shuffle'
