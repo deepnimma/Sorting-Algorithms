@@ -32,7 +32,5 @@
 * PancakeSort
 * PigeonSort
 * Recursive Bubble Sort
-
-## Planned Algorithms
 * UnknownSort
 * WiggleSort
